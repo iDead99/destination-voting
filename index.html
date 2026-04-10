@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AOB NSS Trip Vote — Where Do You Want to Go?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600;700&family=Teko:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <nav id="navbar">
+    <div class="nav-brand">
+      <div class="brand-flag">
+        <div class="flag-r"></div>
+        <div class="flag-g"><span>★</span></div>
+        <div class="flag-gr"></div>
+      </div>
+      <div class="brand-text">
+        <span class="brand-aob">AOB</span>
+        <span class="brand-sub">NSS Personnel</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#vote">Vote</a>
+      <a href="#results">Group Votes</a>
+      <a href="#vote" class="nav-cta">Vote Now</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="drawer-close" id="drawerClose">✕</button>
+    <a href="#hero" class="drawer-link">Home</a>
+    <a href="#vote" class="drawer-link">Vote</a>
+    <a href="#results" class="drawer-link">Group Votes</a>
+    <a href="#vote" class="drawer-link drawer-cta">📍 Vote for My Destination</a>
+  </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- ══════════ HERO ══════════ -->
+  <header class="hero" id="hero">
+    <div class="hero-slider" id="heroSlider">
+      <div class="hero-slide active" style="background-image:url('images/cape-coast-castle.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/mole.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images//kakum.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/accra-airport.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/Kwame-Nkrumah-Mausoleum.jpg')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">🇬🇭 AOB NSS Personnel — Group Trip 2026</div>
+      <h1 class="hero-heading">
+        Where Do You<br>
+        <em>Want to Go?</em>
+      </h1>
+      <p class="hero-body">It's your trip — your choice! Vote for the Ghana destination that excites YOU most and see where the whole AOB NSS team wants to head.</p>
+      <div class="hero-btns">
+        <a href="#vote" class="btn-gold">📍 Vote for My Destination</a>
+        <a href="#results" class="btn-ghost">👀 See the Group's Votes</a>
+      </div>
+    </div>
+
+    <div class="hero-dots" id="heroDots"></div>
+    <button class="hero-arrow left" onclick="heroSlide(-1)">‹</button>
+    <button class="hero-arrow right" onclick="heroSlide(1)">›</button>
+  </header>
+
+  <!-- ══════════ COUNTDOWN ══════════ -->
+  <div class="countdown-bar">
+    <div class="cd-label">⏱ Selection closes in</div>
+    <div class="cd-units">
+      <div class="cd-block"><span class="cd-num" id="cdD">00</span><span class="cd-name">Days</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="cdH">00</span><span class="cd-name">Hours</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="cdM">00</span><span class="cd-name">Mins</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="cdS">00</span><span class="cd-name">Secs</span></div>
+    </div>
+  </div>
+
+  <!-- ══════════ VOTE SECTION ══════════ -->
+  <section id="vote">
+    <div class="section-header reveal">
+      <div class="eyebrow">Your Vote</div>
+      <h2 class="section-title">Where Do <em>You Want to Go?</em></h2>
+      <p class="section-sub">Browse the destinations below and tap the one that speaks to you. Which spot would YOU most love to visit as a group? Your vote matters — choose wisely!</p>
+    </div>
+
+    <div id="alreadyVotedBanner" class="voted-banner" style="display:none">
+      🎉 Your choice is in! Check below to see where the group is leaning.
+    </div>
+
+    <div class="destinations-grid" id="destGrid">
+      <!-- Filled by JS -->
+    </div>
+
+    <div class="submit-area">
+      <button class="btn-submit" id="submitBtn" disabled onclick="submitVote()">
+        📍 Yes, This Is Where I Want to Go!
+      </button>
+      <p class="submit-hint" id="submitHint">Tap a destination above — which one would you love to visit?</p>
+    </div>
+  </section>
+
+  <!-- ══════════ RESULTS ══════════ -->
+  <section id="results" class="results-section">
+    <div class="section-header reveal">
+      <div class="eyebrow">Group Preference</div>
+      <h2 class="section-title">Where Does the <em>Team Want to Go?</em></h2>
+      <p class="section-sub">Live tally of everyone's top vote. The destination with the most votes wins the group trip!</p>
+    </div>
+
+    <div class="winner-card reveal" id="winnerCard" style="display:none">
+      <div class="winner-crown">🏆</div>
+      <div class="winner-info">
+        <div class="winner-label">The Team's Top Vote So Far</div>
+        <div class="winner-name" id="winnerName">—</div>
+        <div class="winner-meta" id="winnerMeta"></div>
+      </div>
+    </div>
+
+    <div class="bar-chart" id="barChart">
+      <!-- Filled by JS -->
+    </div>
+
+    <p class="results-note" id="totalNote"></p>
+  </section>
+
+  <!-- ══════════ SHARE ══════════ -->
+  <div class="share-strip">
+    <div class="share-inner">
+      <h3 class="share-title">Get Everyone to <em>Vote for Theirs</em></h3>
+      <p class="share-sub">Share with your fellow AOB NSS colleagues so everyone gets a say in the group trip!</p>
+      <div class="share-btns">
+        <a id="shareWhatsApp" href="#" target="_blank" class="share-btn wa">📱 WhatsApp</a>
+        <a id="shareTwitter" href="#" target="_blank" class="share-btn tw">𝕏 Share</a>
+        <button class="share-btn cp" onclick="copyLink()"><span id="cpIcon">🔗</span> <span id="cpTxt">Copy Link</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer>
+    <div class="footer-left">
+      <div class="footer-logo">AOB <span>NSS</span></div>
+      <p class="footer-org">Asikuma Odoben Brakwa District<br>National Service Personnel</p>
+    </div>
+    <div class="footer-flag">
+      <div class="flag-r"></div>
+      <div class="flag-g"><span>★</span></div>
+      <div class="flag-gr"></div>
+    </div>
+    <p class="footer-copy">© 2026 AOB NSS Personnel Limited. All rights reserved.</p>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
