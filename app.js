@@ -112,7 +112,7 @@ const DESTINATIONS = [
         alt: 'Akosombo Dam on the Volta River — one of the world\'s largest man-made lakes'
       },
       {
-        src: '../images/accra-airport.jpg',
+        src: 'destination-voting/images/accra-airport.jpg',
         alt: 'Accra International Airport in Accra — gateway to Ghana'
       }
     ]
