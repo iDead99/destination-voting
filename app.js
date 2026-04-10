@@ -25,11 +25,11 @@ const DESTINATIONS = [
     tags: ['History', 'UNESCO', 'Adventure', 'Nature'],
     images: [
       {
-        src: '../images/cape-coast-castle.jpg',
+        src: 'images/cape-coast-castle.jpg',
         alt: 'Cape Coast Castle — white-walled fortress on the Atlantic coast of Ghana'
       },
       {
-        src: '../images/kakum.jpg',
+        src: 'images/kakum.jpg',
         alt: 'Kakum National Park canopy walkway suspended above the rainforest'
       }
     ]
@@ -44,7 +44,7 @@ const DESTINATIONS = [
     tags: ['Waterfall', 'Hiking', 'Nature', 'Wildlife'],
     images: [
       {
-        src: '../images/wli-waterfalls.jpg',
+        src: 'images/wli-waterfalls.jpg',
         alt: 'Wli Waterfalls cascading into a pool surrounded by lush green forest'
       }
     ]
@@ -59,7 +59,7 @@ const DESTINATIONS = [
     tags: ['UNESCO', 'Culture', 'Unique', 'Heritage'],
     images: [
       {
-        src: '../images/nzulezu.jpg',
+        src: 'images/nzulezu.jpg',
         alt: 'Nzulezu stilt village on Lake Tadane — traditional wooden homes above still water'
       }
     ]
@@ -74,11 +74,11 @@ const DESTINATIONS = [
     tags: ['History', 'Beach', 'Accra', 'Culture'],
     images: [
       {
-        src: '../images/Kwame-Nkrumah-Mausoleum.jpg',
+        src: 'images/Kwame-Nkrumah-Mausoleum.jpg',
         alt: 'Kwame Nkrumah Memorial Park and mausoleum in Accra — national monument'
       },
       {
-        src: '../images/labadi-beach.jpg',
+        src: 'images/labadi-beach.jpg',
         alt: 'Labadi Beach in Accra — golden sands and vibrant coastal atmosphere'
       }
     ]
@@ -93,7 +93,7 @@ const DESTINATIONS = [
     tags: ['Safari', 'Elephants', 'Wildlife', 'Nature'],
     images: [
       {
-        src: '../images/mole.jpg',
+        src: 'images/mole.jpg',
         alt: 'Mole National Park — elephant grazing on Ghana\'s vast savannah landscape'
       }
     ]
@@ -108,11 +108,11 @@ const DESTINATIONS = [
     tags: ['Engineering', 'History', 'Infrastructure', 'Aviation'],
     images: [
       {
-        src: '../images/dam.jpg',
+        src: 'images/dam.jpg',
         alt: 'Akosombo Dam on the Volta River — one of the world\'s largest man-made lakes'
       },
       {
-        src: 'destination-voting/images/accra-airport.jpg',
+        src: 'images/accra-airport.jpg',
         alt: 'Accra International Airport in Accra — gateway to Ghana'
       }
     ]
